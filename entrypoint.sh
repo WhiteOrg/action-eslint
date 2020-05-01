@@ -4,6 +4,8 @@ cd "$GITHUB_WORKSPACE"
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
+npm set //npm.pkg.github.com/:_authToken="${REVIEWDOG_GITHUB_API_TOKEN}"
+
 if [ ! -f "$(npm bin)/eslint" ]; then
   npm install
 fi
